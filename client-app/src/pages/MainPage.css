@@ -68,3 +68,28 @@ background-color: #000;
     margin: 0;
 
 }
+.speedCalc__container{
+    background-color: rgba(0,0,0,.2);
+    padding: 30px 0 20px 30px;
+}
+.speedCalc__container label{
+    font-size: 20px;
+}
+.chainring ,.cassette , .wheelSize, .cadence{
+    margin: 20px;
+    height: 30px;
+    width: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+.wheelSize{
+    width: 80px
+}
+.gearsRatio{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.speedResult{
+    font-size: 24px;
+    font-weight: bolder;
+}
