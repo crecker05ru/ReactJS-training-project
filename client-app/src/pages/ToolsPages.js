@@ -43,7 +43,7 @@ export const ToolsPages = (props) => {
                            className="cadence" value={cadence}
                            onChange={e => setCadence(e.target.value)}/>
                     <div className="gearsRatio">Gear ratio: {calculateRatio()}</div>
-                    <div className="speedResult">Km/h: {calculateSpeed()}</div>
+                    <div className="speedResult">Km/h: {calculateSpeed()} Merged</div>
                 </div>
             </div>
             <NavigationBar />
