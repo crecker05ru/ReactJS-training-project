@@ -13,7 +13,7 @@ function App() {
   const routes = useRoutes(true)
 
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
           {routes}
         </div>
