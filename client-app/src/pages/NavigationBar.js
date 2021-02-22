@@ -6,6 +6,9 @@ export const NavigationBar = () => {
             <nav className="nav__menu">
                 <div className="nav__list">
                     <span>
+                        <NavLink to="/news" className="nav__link">News</NavLink>
+                    </span>
+                    <span>
                         <NavLink to="/home" className="nav__link">Home</NavLink>
                     </span>
                     <span>

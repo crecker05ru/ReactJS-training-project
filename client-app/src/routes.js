@@ -5,12 +5,17 @@ import {ToolsPages} from "./pages/ToolsPages";
 import {AuthPage} from "./pages/AuthPage";
 import {HomePage} from "./pages/HomePage";
 import {RoutesPage} from "./pages/RoutesPage";
+import ArticleList from "./components/ArticleList";
+import articles from './fixtures';
 
 
 export const useRoutes = isAuthenticated =>{
     if(isAuthenticated){
         return (
             <Switch>
+                <Route path ="/news" exact>
+                    <ArticleList articles = {articles} />
+                </Route>
                 <Route path ="/main" exact>
                     <MainPage />
                 </Route>
