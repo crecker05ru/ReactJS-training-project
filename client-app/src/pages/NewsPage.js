@@ -5,27 +5,29 @@ import {useState,useEffect} from "react";
 
 
 export function Article(props) {
-    const {article} = props
+    const {article, isOpen, onButtonClick} = props
     console.log(props)
-
-    const [isOpen,setIsOpen] = useState(props.defaultOpen);
+    const [count,setCount] = useState(0)
+    // const [isOpen,setIsOpen] = useState(props.defaultOpen);
     const body = isOpen && <section className="card-text">{article.text}</section>
-    function handleClick(){
-        setIsOpen(!isOpen)
-        console.log('clicked')
+    // function handleClick(){
+    //     // setIsOpen(!isOpen)
+    //     console.log('clicked')
+    // }
+    useEffect(() => {
+        console.log('isOpen in Article',isOpen)
+    },)
+    const incrementCount = () =>{
+        setCount(count+1)
     }
-    useEffect(() =>{
-        console.log('---', 'mounting')
-    })
-    useEffect(() =>{
-        console.log('---', 'mounting')
-    })
+
     return (
         <div className="card">
                 <div className="card-header">
-                    <h2>
+                    <h2 onClick={incrementCount}>
                         {article.title}
-                    <button className="btn btn-primary btn-lg float-end" onClick={handleClick}>{ isOpen ? 'close' : 'open'}</button>
+                        clicked {count}
+                    <button className="btn btn-primary btn-lg float-end" onClick={onButtonClick}>{ isOpen ? 'close' : 'open'}</button>
                     </h2>
                 </div>
             <div className="card-body">
