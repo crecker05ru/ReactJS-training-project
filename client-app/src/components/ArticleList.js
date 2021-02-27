@@ -11,7 +11,7 @@ export default function ArticleList ({ articles }) {
     // const handleClick = useEffect((openArticleId) => {
     //     setOpenArticleId({openArticleId})
     // },[openArticleId])
-    const handleClick = openArticleId => setOpenArticleId({openArticleId})
+    const handleClick = openArticleId => setOpenArticleId(openArticleId)
 
     console.log("openArticleId",openArticleId)
     const articleElements = articles.map((article, index) =>
