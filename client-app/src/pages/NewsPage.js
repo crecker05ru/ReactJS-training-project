@@ -25,7 +25,7 @@ export function Article(props) {
         <div className="card">
                 <div className="card-header">
                     <h2 onClick={incrementCount}>
-                        {article.title}
+                        {article.title + " "}
                         clicked {count}
                     <button className="btn btn-primary btn-lg float-end" onClick={onButtonClick}>{ isOpen ? 'close' : 'open'}</button>
                     </h2>
