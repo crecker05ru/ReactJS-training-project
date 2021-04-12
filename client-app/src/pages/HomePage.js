@@ -1,6 +1,10 @@
-import {useState} from "react";
+import {useState,useEffect,useContext} from "react";
 import {NavigationBar} from "./NavigationBar";
 import {Footer} from "./Footer";
+import {Form} from "../components/Form"
+import {Notes} from "../components/Notes";
+import {FirebaseContext} from "../context/firebase/firebaseContext";
+import {Loader} from "../components/Loader";
 
 export const HomePage = (props) =>{
     const [inputUrl,setInputUrl] = useState('')
@@ -20,6 +24,12 @@ export const HomePage = (props) =>{
         return hostname
     }
 
+  const {loading, notes, fetchNotes, removeNote} = useContext(FirebaseContext)
+
+    useEffect( ()=>{
+        fetchNotes()
+    },[])
+
   return  <div>
         Some JS
         <div>
@@ -33,6 +43,12 @@ export const HomePage = (props) =>{
             <button name="submit" onClick={(event) => setoutputUrl(extractHostname(inputUrl))}> Submit </button>
         </div>
       <NavigationBar />
+
+        <Form />
+      {loading
+      ?<Loader />
+      :< Notes notes={notes} onRemove={removeNote}/>
+      }
       <Footer />
     </div>
 }
